@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot and Thymeleaf example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h3>Number Sorting Application</h3>
+<form action="#" th:action="@{/}" th:object="${post}" method="post">
+    <table>
+        <tr>
+            <td>Number 1:</td>
+            <td><input type="text" th:field="*{number1}"/></td>
+            <td th:if="${#fields.hasErrors('number1')}" th:errors="*{number1}">number1 error message</td>
+        </tr>
+        <tr>
+            <td>Number 2:</td>
+            <td><input type="text" th:field="*{number2}"/></td>
+            <td th:if="${#fields.hasErrors('number2')}" th:errors="*{number2}">number2 error message</td>
+        </tr>
+        <tr>
+            <td>Number 3:</td>
+            <td><input type="text" th:field="*{number3}"/></td>
+            <td th:if="${#fields.hasErrors('number3')}" th:errors="*{number3}">number3 error message</td>
+        </tr>
+        <tr>
+            <td>Number 4:</td>
+            <td><input type="text" th:field="*{number4}"/></td>
+            <td th:if="${#fields.hasErrors('number4')}" th:errors="*{number4}">number4 error message</td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="submit">Submit post</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
